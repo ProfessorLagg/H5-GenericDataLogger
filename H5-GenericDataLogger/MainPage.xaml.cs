@@ -1,16 +1,12 @@
-﻿namespace H5_GenericDataLogger
-{
-    public partial class MainPage : ContentPage
-    {
+﻿namespace H5_GenericDataLogger {
+    public partial class MainPage : ContentPage {
         int count = 0;
 
-        public MainPage()
-        {
+        public MainPage() {
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object? sender, EventArgs e)
-        {
+        private void OnCounterClicked(object? sender, EventArgs e) {
             count++;
 
             if (count == 1)

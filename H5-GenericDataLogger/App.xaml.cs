@@ -1,14 +1,10 @@
-﻿namespace H5_GenericDataLogger
-{
-    public partial class App : Application
-    {
-        public App()
-        {
+﻿namespace H5_GenericDataLogger {
+    public partial class App : Application {
+        public App() {
             InitializeComponent();
         }
 
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
+        protected override Window CreateWindow(IActivationState? activationState) {
             return new Window(new AppShell());
         }
     }
