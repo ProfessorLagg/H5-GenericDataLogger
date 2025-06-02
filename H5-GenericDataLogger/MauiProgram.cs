@@ -1,4 +1,8 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System.Diagnostics;
+
+using H5_GenericDataLogger.Data;
+
+using Microsoft.Extensions.Logging;
 
 namespace H5_GenericDataLogger {
     public static class MauiProgram {
@@ -10,6 +14,7 @@ namespace H5_GenericDataLogger {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+            builder.Services.AddSingleton<DBConnector>();
 
 #if DEBUG
             builder.Logging.AddDebug();
