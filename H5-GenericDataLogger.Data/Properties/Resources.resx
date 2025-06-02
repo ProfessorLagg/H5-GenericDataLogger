@@ -118,10 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="sql_ensure_logfields_table" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\RequiredSchema\LogFields.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="sql_ensure_log_fields" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\RequiredSchema\log_fields.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="sql_ensure_logs_table" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="sql_ensure_logs" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\RequiredSchema\Logs.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="sql_ensure_log_entries" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\RequiredSchema\log_entries.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="sql_ensure_log_values" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\RequiredSchema\log_values.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

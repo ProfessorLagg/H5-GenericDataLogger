@@ -13,5 +13,6 @@ namespace H5_GenericDataLogger.Data {
         DateTime = 4,
         Location = 5,
         Image = 6,
+        Bool = 7,
     }
 }

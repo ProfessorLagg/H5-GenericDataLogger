@@ -14,8 +14,13 @@ namespace H5_GenericDataLogger.Data {
         /// SQLite id.
         /// <remark>Only has a value for Log's that actually exist in the database</remark>
         /// </summary>
-        public readonly long Id;
-        public readonly string Title;
+        public readonly long Id = -1;
+        public readonly string Title = "INVALID";
+
+        internal Log(long id, string title) {
+            this.Title = title;
+            this.Id = id;
+        }
 
         /// <summary>Gets fields schema from the Database</summary>
         public IEnumerable<LogField> LoadFields(DBConnector connector) {
@@ -28,8 +33,18 @@ namespace H5_GenericDataLogger.Data {
                     Label = dataReader.GetString(0),
                     ValueType = (ValueType)dataReader.GetInt64(1),
                 };
-            } while (dataReader.NextResult());
+            } while (dataReader.Read());
         }
+
+        internal AddFields(IEnumerable<LogField> fields) {
+            SqliteCommand command = new();
+            command.Bat
+            StringBuilder commandBuilder = new();
+            foreach(LogField field in fields) {
+                commandBuilder.AppendLine("INSERT INTO logs")
+            }
+        }
+
 
 
         private Log(string title) {

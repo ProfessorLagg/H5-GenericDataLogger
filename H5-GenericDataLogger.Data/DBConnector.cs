@@ -9,9 +9,11 @@ using System.Threading.Tasks;
 namespace H5_GenericDataLogger.Data {
     public sealed class DBConnector {
         private const string DefaultDataSource = "GenericDataLogger.db";
-        private static readonly string[] RequiredSchemaSql = {
-            H5_GenericDataLogger.Data.Properties.Resources.sql_ensure_logs_table,
-            H5_GenericDataLogger.Data.Properties.Resources.sql_ensure_logfields_table
+        private static readonly string[] RequiredSchema = {
+            H5_GenericDataLogger.Data.Properties.Resources.sql_ensure_logs,
+            H5_GenericDataLogger.Data.Properties.Resources.sql_ensure_log_fields,
+            H5_GenericDataLogger.Data.Properties.Resources.sql_ensure_log_entries,
+            H5_GenericDataLogger.Data.Properties.Resources.sql_ensure_log_values,
         };
         private static string MakeConnectionString(string dataSource) {
             ArgumentException.ThrowIfNullOrWhiteSpace(dataSource);
@@ -79,10 +81,30 @@ namespace H5_GenericDataLogger.Data {
             return result;
         }
 
+        public SqliteDataReader ExecuteNonQuery(IEnumerable<SqliteCommand> commands) {
+            lock (this.ConnectionLock) {
+                // TODO Build this
+            }
+        }
+
+        public IEnumerable<Log> GetLogs() {
+            using SqliteCommand command = new SqliteCommand();
+            command.CommandText = @"SELECT * FROM logs";
+            using SqliteDataReader reader = this.ExecuteReader(command);
+            do {
+                long id = reader.GetInt64(0);
+                string title = reader.GetString(1);
+                yield return new Log(id, title);
+            } while (reader.Read());
+        }
+
+        public Log CreateLog(string title, IEnumerable<LogField> fields) {
+
+        }
 
         public void EnsureRequiredSchema() {
-            for (ushort i = 0; i < RequiredSchemaSql.Length; i++) {
-                using (SqliteCommand command = new SqliteCommand(RequiredSchemaSql[i])) {
+            for (ushort i = 0; i < RequiredSchema.Length; i++) {
+                using (SqliteCommand command = new SqliteCommand(RequiredSchema[i])) {
                     _ = this.ExecuteNonQuery(command);
                 }
             }

@@ -61,28 +61,57 @@ namespace H5_GenericDataLogger.Data.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CREATE TABLE IF NOT EXISTS LogFields (
-        ///    Id INTEGER PRIMARY KEY,
-        ///    Title NVARCHAR(MAX),
-        ///);
+        ///   Looks up a localized string similar to CREATE TABLE IF NOT EXISTS log_entries (id INTEGER PRIMARY KEY, log_id INTEGER REFERENCES logs(id));
         ///.
         /// </summary>
-        internal static string sql_ensure_logfields_table {
+        internal static string sql_ensure_log_entries {
             get {
-                return ResourceManager.GetString("sql_ensure_logfields_table", resourceCulture);
+                return ResourceManager.GetString("sql_ensure_log_entries", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CREATE TABLE IF NOT EXISTS Logs (
-        ///    Id INTEGER PRIMARY KEY,
-        ///    Title NVARCHAR(MAX),
-        ///);
+        ///   Looks up a localized string similar to CREATE TABLE IF NOT EXISTS log_fields (id INTEGER PRIMARY KEY, log_id INTEGER REFERENCES logs(id), label TEXT, data_type INTEGER);
         ///.
         /// </summary>
-        internal static string sql_ensure_logs_table {
+        internal static string sql_ensure_log_fields {
             get {
-                return ResourceManager.GetString("sql_ensure_logs_table", resourceCulture);
+                return ResourceManager.GetString("sql_ensure_log_fields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CREATE TABLE IF NOT EXISTS integer_log_values (
+        ///	id INTEGER PRIMARY KEY,
+        ///	entry_id INTEGER REFERENCES log_entries(id),
+        ///	field_id INTEGER REFERENCES log_fields(id),
+        ///	val INTEGER
+        ///);
+        ///
+        ///CREATE TABLE IF NOT EXISTS real_log_values (
+        ///	id INTEGER PRIMARY KEY,
+        ///	entry_id INTEGER REFERENCES log_entries(id),
+        ///	field_id INTEGER REFERENCES log_fields(id),
+        ///	val REAL
+        ///);
+        ///
+        ///CREATE TABLE IF NOT EXISTS text_log_values (
+        ///	id INTEGER PRIMARY KEY,
+        ///	entry_id INTEGER REFERENCES log_entries(id),
+        ///	field_id INTEGER REFER [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string sql_ensure_log_values {
+            get {
+                return ResourceManager.GetString("sql_ensure_log_values", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CREATE TABLE IF NOT EXISTS logs (id INTEGER PRIMARY KEY, title TEXT);.
+        /// </summary>
+        internal static string sql_ensure_logs {
+            get {
+                return ResourceManager.GetString("sql_ensure_logs", resourceCulture);
             }
         }
     }
