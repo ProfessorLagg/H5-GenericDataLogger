@@ -1,0 +1,37 @@
+.home-log-card {
+    width: 100%;
+    height: var(--sizeXXL);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: var(--sizeS);
+    padding-top: 0;
+    margin-top: var(--sizeM);
+    border-bottom-width: var(--sizeXXS);
+    border-bottom-style: solid;
+}
+
+.home-log-title {
+    font-size: var(--sizeM);
+    font-weight: bold;
+
+}
+
+.home-log-edit-btn {
+    all: unset;
+    aspect-ratio: 1/1;
+    height: var(--sizeL);
+    width:  var(--sizeL);
+    /*Background*/
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("/icons/pencil.svg");
+    background-size: contain;
+
+    border-radius: var(--sizeXXS);
+}
+
+.home-log-edit-btn:hover {
+    background-color: var(--back-hover);
+
+}

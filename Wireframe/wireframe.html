@@ -13,22 +13,62 @@
     <body>
         <div id="frame-wrapper">
             <span class="page-title">Home Page</span>
-            <div class="page">
+            <div class="page" id="page-home">
                 <div class="nav-bar">
                     <img src="icons/arrow-long-left.svg" alt="back-arrow" class="back-arrow" />
                 </div>
                 <div class="page-body">
-                    <div class="log-card border-red70">
-                        <span class="log-title">Ciggies</span>
-                        <button class="log-edit-btn"></button>
+                    <div class="home-log-card border-red70">
+                        <span class="home-log-title">Ciggies</span>
+                        <button class="home-log-edit-btn"></button>
                     </div>
-                    <div class="log-card border-orange50">
-                        <span class="log-title">Sleep</span>
-                        <button class="log-edit-btn"></button>
+                    <div class="home-log-card border-orange50">
+                        <span class="home-log-title">Sleep</span>
+                        <button class="home-log-edit-btn"></button>
                     </div>
-                    <div class="log-card border-blue70">
-                        <span class="log-title">Mood</span>
-                        <button class="log-edit-btn"></button>
+                    <div class="home-log-card border-blue70">
+                        <span class="home-log-title">Mood</span>
+                        <button class="home-log-edit-btn"></button>
+                    </div>
+                    <div id="home-addlog"></div>
+                </div>
+            </div>
+            <span class="page-title">Edit Page</span>
+            <div class="page" id="page-edit">
+                <div class="nav-bar">
+                    <img src="icons/arrow-long-left.svg" alt="back-arrow" class="back-arrow" />
+                </div>
+                <div class="page-body">
+                    <div id="edit-name" class="edit-group">
+                        <p class="edit-group-title">General</p>
+                        <div class="input-group">
+                            <span class="input-label">Title</span>
+                            <input type="text" placeholder="enter a value..." value="Ciggies" />
+                        </div>
+                    </div>
+                    <div id="edit-fields" class="edit-group">
+                        <p class="edit-group-title">Fields</p>
+                        <!-- TODO Add Field Button -->
+                        <div class="edit-field-group">
+                            <!-- TODO Delete Field Button -->
+                            <div class="input-group">
+                                <span class="input-label">Label</span>
+                                <input type="text" placeholder="enter a value . . ." />
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">Type</label>
+                                <select class="select-valuetype">
+                                    <option value="7">Bool</option>
+                                    <option value="4">DateTime</option>
+                                    <option value="3">Float</option>
+                                    <option value="6">Image</option>
+                                    <option value="2">Integer</option>
+                                    <option value="5">Location</option>
+                                    <option value="1">String</option>
+                                </select>
+                                <!-- <input name="edit-name-input" type="sel" placeholder="enter a value . . ." /> -->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

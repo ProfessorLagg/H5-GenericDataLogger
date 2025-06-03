@@ -21,6 +21,7 @@
     --color-gray05: #f2f2f2;
     --color-gray10: #e6e6e6;
     --color-gray20: #cccccc;
+    --color-gray50: #808080;
     --color-gray70: #4d4d4d;
     --color-gray80: #333333;
     --color-gray90: #1a1a1a;
@@ -45,7 +46,8 @@
     font-size: var(--sizeM);
     padding: 0px;
     margin: 0px;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
+    vertical-align: text-bottom;
 }
 
 h1 {
