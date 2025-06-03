@@ -12,19 +12,26 @@
     }
 }
 
+:root {
+    --back-hover: var(--color-gray05);
+}
+
 #frame-wrapper {
     width: 100%;
+    min-height: 100dvh;
     height: fit-content;
     display: grid;
     gap: var(--sizeM) 0;
-    grid-auto-rows: min-content var(--pageHeight);
+    grid-auto-rows: var(--sizeXXL) var(--pageHeight);
     justify-content: center;
-    align-items: flex-start;
     background-color: var(--color-gray90);
+    padding-top: var(--sizeM);
     padding-bottom: var(--sizeM);
 }
 
 .page-title {
+    font-size: var(--sizeXL);
+    text-align: left;
     width: var(--pageWidth);
     text-align: left;
     color: white;
@@ -41,14 +48,23 @@
     /* outline: 1px solid red; */
 }
 
+.page-body {
+    width: 100%;
+    height: 100%;
+    /* 
+    background-color: rgba(255, 0, 0, 10%); */
+}
+
+
 .nav-bar {
-    border-bottom: var(--sizeXXS) solid var(--color-gray20);
+    border-bottom: var(--su) solid var(--color-gray20);
     display: flex;
     height: fit-content;
     align-items: center;
 
     height: var(--sizeXL);
     padding: var(--sizeXS);
+    padding-bottom: calc(var(--sizeXS) - var(--su));
 }
 
 .back-arrow {
@@ -57,16 +73,48 @@
     height: var(--sizeL);
     border-radius: 50%;
 }
-.back-arrow:hover{
-    background-color: var(--color-gray20);
-}
-.page-body{
-    padding: var(--sizeM);
-    width: 100%;
-    height: 100%;
 
-    background-color: rgba(255,0,0,10%);
+.back-arrow:hover {
+    background-color: var(--back-hover);
 }
+
+
 .log-card {
     width: 100%;
+    height: var(--sizeXXL);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: var(--sizeS);
+    padding-top: 0;
+    margin-top: var(--sizeM);
+    border-bottom-width: var(--sizeXXS);
+    border-bottom-style: solid;
+}
+
+.log-title {
+    font-size: var(--sizeM);
+    font-weight: bold;
+
+}
+
+.log-edit-btn {
+    all: unset;
+    aspect-ratio: 1/1;
+    height: var(--sizeL);
+    width:  var(--sizeL);
+    /*Background*/
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("/icons/pencil.svg");
+    background-size: contain;
+
+    border-radius: var(--sizeXXS);
+    /*Debug*/
+    /* outline: 1px solid magenta; */
+}
+
+.log-edit-btn:hover {
+    background-color: var(--back-hover);
+
 }

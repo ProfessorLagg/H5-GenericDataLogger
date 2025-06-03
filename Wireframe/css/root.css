@@ -5,9 +5,19 @@
     --color-blue70: #003699;
     --color-blue90: #001233;
 
+    --color-orange10: #ffeecc;
+    --color-orange30: #ffcc66;
+    --color-orange50: #ffaa00;
+
+    --color-red10: #fcd6cf;
+    --color-red30: #f6836f;
+    --color-red50: #f2330d;
+    --color-red70: #901d09;
+    --color-red90: #300a03;
+
     --color-white: #ffffff;
     --color-black: #000000;
-    
+
     --color-gray05: #f2f2f2;
     --color-gray10: #e6e6e6;
     --color-gray20: #cccccc;
@@ -16,8 +26,9 @@
     --color-gray90: #1a1a1a;
 
     /* Base Size Unit*/
+    --golden-ratio: 1.61803398875;
+
     --su: 1px;
-    /* --size-scale: 1.61803398875; */
     --size-scale: 1.5;
 
     --sizeXXS: calc(var(--sizeXS) / var(--size-scale));
@@ -133,4 +144,42 @@ h6 {
     padding: var(--sizeXXL);
     padding-top: var(--sizeXL);
     padding-top: var(--sizeXL);
+}
+
+.border-blue10 {
+    border-color: var(--color-blue10);
+}
+
+.border-blue30 {
+    border-color: var(--color-blue30);
+}
+
+.border-blue50 {
+    border-color: var(--color-blue50);
+}
+
+.border-blue70 {
+    border-color: var(--color-blue70);
+}
+
+.border-blue90 {
+    border-color: var(--color-blue90);
+}
+
+.border-red10 {    border-color: var(--color-red10);}
+.border-red30 {    border-color: var(--color-red30);}
+.border-red50 {    border-color: var(--color-red50);}
+.border-red70 {    border-color: var(--color-red70);}
+.border-red90 {    border-color: var(--color-red90);}
+
+.border-orange10 {
+    border-color: var(--color-orange10);
+}
+
+.border-orange30 {
+    border-color: var(--color-orange30);
+}
+
+.border-orange50 {
+    border-color: var(--color-orange50);
 }
