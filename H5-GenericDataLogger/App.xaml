@@ -4,9 +4,12 @@
              xmlns:local="clr-namespace:H5_GenericDataLogger"
              x:Class="H5_GenericDataLogger.App">
     <Application.Resources>
+        <!-- https://learn.microsoft.com/en-us/dotnet/maui/user-interface/styles/css?view=net-maui-9.0 -->
+        <StyleSheet Source="/Resources/Styles/styles.css" />
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Sizes.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

@@ -71,4 +71,10 @@
 	  <ProjectReference Include="..\H5-GenericDataLogger.Data\H5-GenericDataLogger.Data.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <MauiXaml Update="Resources\Styles\Sizes.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>

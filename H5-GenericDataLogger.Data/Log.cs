@@ -36,13 +36,8 @@ namespace H5_GenericDataLogger.Data {
             } while (dataReader.Read());
         }
 
-        internal AddFields(IEnumerable<LogField> fields) {
-            SqliteCommand command = new();
-            command.Bat
-            StringBuilder commandBuilder = new();
-            foreach(LogField field in fields) {
-                commandBuilder.AppendLine("INSERT INTO logs")
-            }
+        internal void AddFields(IEnumerable<LogField> fields) {
+            throw new NotImplementedException();
         }
 
 

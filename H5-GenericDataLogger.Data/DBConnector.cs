@@ -84,6 +84,7 @@ namespace H5_GenericDataLogger.Data {
         public SqliteDataReader ExecuteNonQuery(IEnumerable<SqliteCommand> commands) {
             lock (this.ConnectionLock) {
                 // TODO Build this
+                throw new NotImplementedException();
             }
         }
 
@@ -99,7 +100,7 @@ namespace H5_GenericDataLogger.Data {
         }
 
         public Log CreateLog(string title, IEnumerable<LogField> fields) {
-
+            throw new NotImplementedException();
         }
 
         public void EnsureRequiredSchema() {
