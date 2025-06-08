@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace H5_GenericDataLogger.Data {
-    /// <summary>
-    /// Log Field schema data
-    /// </summary>
-    public sealed record class LogField {
-        public string Label = "INVALID";
-        public ValueType ValueType = ValueType.Unknown;
-    }
+	/// <summary>
+	/// Log Field schema data
+	/// </summary>
+	public sealed record class LogField {
+		public string Label = "INVALID";
+		public FieldValueType ValueType = FieldValueType.Unknown;
+		// TODO Default Values
+	}
 }
