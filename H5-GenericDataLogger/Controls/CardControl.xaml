@@ -23,7 +23,7 @@
 			VerticalOptions="End" 
 			HorizontalOptions="Start"
 			FontSize="{StaticResource SizeM}"
-			FontAttributes="Bold"
+			FontFamily="OpenSansBold"
 			Grid.Row="1"
 			Grid.Column="1"
 				/>

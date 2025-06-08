@@ -7,7 +7,7 @@
 	<ScrollView>
 		<VerticalStackLayout>
 			<controls:CardControl Title="MainPageCard1" AccentColor="{StaticResource Red70}"/>
-			<controls:CardControl Title="MainPageCard2" AccentColor="{StaticResource Orange50}"/>
+			<controls:CardControl Title="MainPageCard2" AccentColor="{StaticResource Orange70}"/>
 			<controls:CardControl Title="MainPageCard2" AccentColor="{StaticResource Blue70}"/>
 		</VerticalStackLayout>
 	</ScrollView>

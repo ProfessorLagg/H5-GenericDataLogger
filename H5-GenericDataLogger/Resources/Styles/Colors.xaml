@@ -15,6 +15,8 @@
 	<Color x:Key="Orange10">#ffeecc</Color>
 	<Color x:Key="Orange30">#ffcc66</Color>
 	<Color x:Key="Orange50">#ffaa00</Color>
+	<Color x:Key="Orange70">#996600</Color>
+	<Color x:Key="Orange90">#332200</Color>
 	
 	<Color x:Key="Red10">#fcd6cf</Color>
 	<Color x:Key="Red30">#f6836f</Color>
@@ -44,6 +46,8 @@
 	<SolidColorBrush x:Key="Orange10Brush" Color="{StaticResource Orange10}"/>
 	<SolidColorBrush x:Key="Orange30Brush" Color="{StaticResource Orange30}"/>
 	<SolidColorBrush x:Key="Orange50Brush" Color="{StaticResource Orange50}"/>
+	<SolidColorBrush x:Key="Orange70Brush" Color="{StaticResource Orange70}"/>
+	<SolidColorBrush x:Key="Orange90Brush" Color="{StaticResource Orange90}"/>
 
 	<SolidColorBrush x:Key="Red10Brush" Color="{StaticResource Red10}"/>
 	<SolidColorBrush x:Key="Red30Brush" Color="{StaticResource Red30}"/>
