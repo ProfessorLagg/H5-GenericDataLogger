@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="H5_GenericDataLogger.Controls.CardControl">
+
+	<Grid
+		HeightRequest="{StaticResource SizeXXL}"
+		>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="{StaticResource SizeS}"/>
+			<ColumnDefinition/>
+			<ColumnDefinition Width="{StaticResource SizeL}"/>
+			<ColumnDefinition Width="{StaticResource SizeS}"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="{StaticResource SizeM}"/>
+			<RowDefinition/>
+			<RowDefinition Height="{StaticResource SizeXXS}"/>
+		</Grid.RowDefinitions>
+		<Label
+			x:Name="TitleLabel"
+			Style="{StaticResource BaseLabel}"
+			VerticalOptions="End" 
+			HorizontalOptions="Start"
+			FontSize="{StaticResource SizeM}"
+			FontAttributes="Bold"
+			Grid.Row="1"
+			Grid.Column="1"
+				/>
+		<ImageButton
+				Grid.Row="1"
+				x:Name="EditButton"
+				Source="pencil.png"
+				VerticalOptions="Center"
+				HorizontalOptions="End"
+				WidthRequest="{StaticResource SizeL}"
+				HeightRequest="{StaticResource SizeL}"
+				BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray20}}"
+				Grid.Column="2"
+				/>
+
+		<Rectangle
+			x:Name="AccentBorder"
+			Grid.Row="2"
+			Grid.Column="0"
+			Grid.ColumnSpan="4"
+			/>
+	</Grid>
+</ContentView>

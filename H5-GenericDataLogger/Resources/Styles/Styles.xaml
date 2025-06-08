@@ -6,21 +6,20 @@
 
     <Style x:Key="BaseLabel" TargetType="Label" ApplyToDerivedTypes="True">
         <Setter Property="FontFamily" Value="OpenSansRegular"/>
-        <!--<Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>-->
-        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Blue90}, Dark={StaticResource Blue10}}"/>
-    </Style>
+		<Setter Property="TextColor" Value="{AppThemeBinding Light={x:StaticResource Black}, Dark={x:StaticResource White}}"/>
+	</Style>
 
-    <Style TargetType="Page" ApplyToDerivedTypes="True">
-        <Setter Property="Padding" Value="{StaticResource SizeM}"/>
-        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray10}, Dark={StaticResource Gray90}}" />
-    </Style>
+	<!--<Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+        <Setter Property="Padding" Value="{x:StaticResource SizeM}"/>
+		<Setter Property="BackgroundColor" Value="{AppThemeBinding Light={x:StaticResource Gray10}, Dark={x:StaticResource Gray90}}" />
+    </Style>-->
 
-    <!--<Style TargetType="Shell" ApplyToDerivedTypes="True">
-        --><!--{AppThemeBinding Light={StaticResource Gray80}, Dark={StaticResource Gray20}}--><!--
-        <Setter Property="Shell.BackgroundColor" Value="{StaticResource White}" />
-        <Setter Property="Shell.ForegroundColor" Value="{StaticResource Black}" />
-        <Setter Property="Shell.TitleColor" Value="{StaticResource Black}" />
-        --><!-- TODO --><!--
+    <Style TargetType="Shell" ApplyToDerivedTypes="True">
+        <!--{AppThemeBinding Light={StaticResource Gray80}, Dark={StaticResource Gray20}}-->
+		<Setter Property="Shell.BackgroundColor" Value="{AppThemeBinding Light={x:StaticResource Gray10}, Dark={x:StaticResource Gray90}}" />
+		<Setter Property="Shell.ForegroundColor" Value="{AppThemeBinding Light={x:StaticResource Black}, Dark={x:StaticResource White}}" />
+		<Setter Property="Shell.TitleColor" Value="{AppThemeBinding Light={x:StaticResource Black}, Dark={x:StaticResource White}}" />
+         <!--TODO--> 
         <Setter Property="Shell.DisabledColor" Value="{StaticResource Gray20}" />
         <Setter Property="Shell.UnselectedColor" Value="{StaticResource Gray20}" />
         <Setter Property="Shell.NavBarHasShadow" Value="False" />
@@ -41,6 +40,6 @@
         <Setter Property="BarTextColor" Value="{StaticResource Blue50}" />
         <Setter Property="UnselectedTabColor" Value="{StaticResource Gray20}" />
         <Setter Property="SelectedTabColor" Value="{StaticResource Gray90}" />
-    </Style>-->
+    </Style>
 
 </ResourceDictionary>

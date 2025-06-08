@@ -64,14 +64,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Resources\Images\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <ProjectReference Include="..\H5-GenericDataLogger.Data\H5-GenericDataLogger.Data.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Controls\CardControl.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Resources\Styles\Sizes.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
