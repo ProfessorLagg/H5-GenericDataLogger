@@ -1,0 +1,99 @@
+@import url(/css/borders.css);
+
+:root {
+    --color-blue10: #ccdeff;
+    --color-blue30: #99bdff;
+    --color-blue50: #0059ff;
+    --color-blue70: #003699;
+    --color-blue90: #001233;
+
+    --color-orange10: #ffeecc;
+    --color-orange30: #ffcc66;
+    --color-orange50: #ffaa00;
+    --color-orange70: #996600;
+    --color-orange90: #332200;
+
+    --color-red10: #fcd6cf;
+    --color-red30: #f6836f;
+    --color-red50: #f2330d;
+    --color-red70: #901d09;
+    --color-red90: #300a03;
+
+    --color-white: #ffffff;
+    --color-black: #000000;
+
+    --color-gray05: #f2f2f2;
+    --color-gray10: #e6e6e6;
+    --color-gray20: #cccccc;
+    --color-gray50: #808080;
+    --color-gray70: #4d4d4d;
+    --color-gray80: #333333;
+    --color-gray90: #1a1a1a;
+
+    /* Base Size Unit*/
+    --golden-ratio: 1.61803398875;
+
+    --su: 1px;
+    --size-scale: 1.5;
+
+    --sizeXXS: calc(var(--sizeXS) / var(--size-scale));
+    --sizeXS: calc(var(--sizeS) / var(--size-scale));
+    --sizeS: calc(var(--sizeM) / var(--size-scale));
+    --sizeM: calc(16 * var(--su));
+    --sizeL: calc(var(--sizeM) * var(--size-scale));
+    --sizeXL: calc(var(--sizeL) * var(--size-scale));
+    --sizeXXL: calc(var(--sizeXL) * var(--size-scale));
+}
+
+* {
+    font-family: "Open Sans";
+    font-size: var(--sizeM);
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box !important;
+    vertical-align: text-bottom;
+}
+
+body {
+    padding: var(--sizeM);
+}
+
+@media (prefers-color-scheme: dark) {
+    * {
+        color: var(--color-white);
+    }
+
+    body {
+        background-color: var(--color-gray90);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    * {
+        color: var(--color-black);
+    }
+
+    body {
+        background-color: var(--color-gray10);
+    }
+}
+
+
+
+h1 {
+    font-size: var(--sizeXXL);
+}
+
+h2 {
+    font-size: var(--sizeXL);
+}
+
+h3 {
+    font-size: var(--sizeL);
+}
+
+h4,
+h5,
+h6 {
+    font-size: var(--sizeM);
+}

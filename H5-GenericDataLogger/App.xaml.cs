@@ -5,7 +5,7 @@
 		}
 
 		protected override Window CreateWindow(IActivationState? activationState) {
-			return new Window(GlobalEnvironment.NavPage);
+			return new Window(new MainPage());
 		}
 	}
 }

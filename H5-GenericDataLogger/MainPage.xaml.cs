@@ -1,14 +1,12 @@
-﻿using System.Threading.Tasks;
+namespace H5_GenericDataLogger;
 
-namespace H5_GenericDataLogger {
-	public partial class MainPage : ContentPage {
-		public MainPage() {
-			InitializeComponent();
-			this.NewLogButton.Clicked += this.NewLogButton_Click;
-		}
+public partial class MainPage : ContentPage {
+	public MainPage() {
+		InitializeComponent();
+	}
 
-		public void NewLogButton_Click(object? sender, EventArgs e) {
-			GlobalEnvironment.NavPage.PushAsync(new EditLogPage());
-		}
+	protected override bool OnBackButtonPressed() {
+		_ = MainWebView.EvaluateJavaScriptAsync("history.back()");
+		return true;
 	}
 }
