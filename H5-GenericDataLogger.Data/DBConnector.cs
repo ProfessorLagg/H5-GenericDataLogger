@@ -115,26 +115,34 @@ namespace H5_GenericDataLogger.Data {
 		}
 
 		public Log CreateLog(string title, IEnumerable<LogField> fields) {
-			using SqliteCommand createlog_cmd = new();
-			createlog_cmd.CommandText = @"INSERT INTO logs (title) VALUES ($title) RETURNING id";
-			createlog_cmd.Parameters.AddWithValue("$title", title);
-			object? createlog_result = this.ExecuteScalar(createlog_cmd);
-			// TODO Error Handling
-			// TODO Handle 0 return
-			long log_id = (long)createlog_result!;
+			lock (this.ConnectionLock) {
+				this.Connection.Open();
+				try {
+					long log_id = -1;
+					using (SqliteCommand createlog_cmd = this.Connection.CreateCommand()) {
+						createlog_cmd.CommandText = @"INSERT INTO logs (title) VALUES ($title) RETURNING id";
+						createlog_cmd.Parameters.AddWithValue("$title", title);
+						object? createlog_result = createlog_cmd.ExecuteScalar();
+						// TODO Error Handling
+						log_id = (long)createlog_result!;
+					}
 
-			foreach (LogField field in fields) {
-				using (SqliteCommand createfields_cmd = new()) {
-					createfields_cmd.CommandText = "INSERT INTO log_fields (log_id, label, data_type) VALUES ($log_id, $label, $data_type) RETURNING id";
-					createfields_cmd.Parameters.AddWithValue("$log_id", log_id);
-					createfields_cmd.Parameters.AddWithValue("$label", field.Label);
-					createfields_cmd.Parameters.AddWithValue("$data_type", field.ValueType.ToInt());
-					object? createfields_result = this.ExecuteScalar(createlog_cmd);
-					// TODO Handle errors
-					// TODO Handle 0 result
+					using (SqliteCommand createfields_cmd = this.Connection.CreateCommand()) {
+						// TODO use parameters to make this safer
+						createfields_cmd.CommandText =
+							"INSERT INTO log_fields (log_id, label, data_type) VALUES\n"
+							+ string.Join(",\n", fields.Select(f => $"({log_id},'{f.Label}',{f.ValueType.ToInt()})")) + ';';
+						int createfields_result = createfields_cmd.ExecuteNonQuery();
+						// TODO Error Handling
+					}
+					return new Log(log_id, title, fields);
 				}
+				finally { this.Connection.Close(); }
 			}
-			return new Log(log_id, title, fields);
+		}
+
+		public void AddLogEntry(Log log, LogField field, ILogFieldValue value) {
+
 		}
 
 		public void EnsureRequiredSchema() {

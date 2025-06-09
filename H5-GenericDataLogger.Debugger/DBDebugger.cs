@@ -12,5 +12,14 @@ internal static class DBDebugger {
 	public static void DebugConnector() {
 		DBConnector connector = new DBConnector();
 		connector.EnsureRequiredSchema();
+
+		_ = connector.CreateLog("Ciggies", new LogField[]{
+				new LogField() {
+					Label = "Timestamp",
+					ValueType = FieldValueType.DateTime
+				}
+		});
+
+		var logs = connector.GetLogs().ToArray();
 	}
 }
