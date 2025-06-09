@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H5-GenericDataLogger", "H5-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H5-GenericDataLogger.Data", "H5-GenericDataLogger.Data\H5-GenericDataLogger.Data.csproj", "{44DE4AFA-C3A9-4D9E-B645-6D38036A29B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H5-GenericDataLogger.Debugger", "H5-GenericDataLogger.Debugger\H5-GenericDataLogger.Debugger.csproj", "{94B80E06-7D82-455D-A579-5A55FD61E1BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{44DE4AFA-C3A9-4D9E-B645-6D38036A29B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44DE4AFA-C3A9-4D9E-B645-6D38036A29B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44DE4AFA-C3A9-4D9E-B645-6D38036A29B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94B80E06-7D82-455D-A579-5A55FD61E1BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94B80E06-7D82-455D-A579-5A55FD61E1BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94B80E06-7D82-455D-A579-5A55FD61E1BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94B80E06-7D82-455D-A579-5A55FD61E1BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

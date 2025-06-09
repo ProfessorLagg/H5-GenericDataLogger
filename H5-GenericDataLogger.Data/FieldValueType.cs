@@ -15,4 +15,10 @@ namespace H5_GenericDataLogger.Data {
         Image = 6,
         Bool = 7,
     }
+
+    public static class FieldValueTypeExtentions {
+        public static long ToInt(this FieldValueType fvt) {
+            return (long)fvt;
+        }
+    }
 }
