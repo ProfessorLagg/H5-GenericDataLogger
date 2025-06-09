@@ -65,10 +65,17 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\H5-GenericDataLogger.Data\H5-GenericDataLogger.Data.csproj" />
+	  <ProjectReference Include="..\H5-GenericDataLogger.Utils\H5-GenericDataLogger.Utils.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="AppNavPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Controls\CardControl.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="EditLogPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Resources\Styles\Sizes.xaml">

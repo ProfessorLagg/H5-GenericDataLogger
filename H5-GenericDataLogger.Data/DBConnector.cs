@@ -141,8 +141,16 @@ namespace H5_GenericDataLogger.Data {
 			}
 		}
 
-		public void AddLogEntry(Log log, LogField field, ILogFieldValue value) {
-
+		public void AddLogEntry(Log log, IList<ILogFieldValue> values) {
+			// TODO Validate that values matches fields
+			lock (this.ConnectionLock) {
+				this.Connection.Open();
+				using(SqliteCommand cmd = this.Connection.CreateCommand()) {
+					cmd.CommandText = "INSERT INTO log_entries VALUES\n";
+					
+				}
+				this.Connection.Close();
+			}
 		}
 
 		public void EnsureRequiredSchema() {

@@ -10,4 +10,10 @@ public sealed class FloatLogValue : ILogFieldValue {
 	public FieldValueType GetFieldValueType() => FieldValueType.Real;
 	public Type GetValueType() => typeof(double);
 	public object GetValue() => Value;
+
+	public FloatLogValue(double? value = null) {
+		// TODO Handle Default Value
+		this.Value = value ?? double.NaN;
+	}
 }
+

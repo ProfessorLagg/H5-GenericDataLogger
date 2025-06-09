@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H5-GenericDataLogger.Data",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H5-GenericDataLogger.Debugger", "H5-GenericDataLogger.Debugger\H5-GenericDataLogger.Debugger.csproj", "{94B80E06-7D82-455D-A579-5A55FD61E1BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H5-GenericDataLogger.Utils", "H5-GenericDataLogger.Utils\H5-GenericDataLogger.Utils.csproj", "{8E04615D-C57B-4CE2-B76A-3FEC052AF812}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,7 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{453A234C-F7B2-4D8F-A6D3-3E862CBDC9AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{453A234C-F7B2-4D8F-A6D3-3E862CBDC9AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{453A234C-F7B2-4D8F-A6D3-3E862CBDC9AA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{453A234C-F7B2-4D8F-A6D3-3E862CBDC9AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{453A234C-F7B2-4D8F-A6D3-3E862CBDC9AA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{44DE4AFA-C3A9-4D9E-B645-6D38036A29B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -27,6 +30,10 @@ Global
 		{94B80E06-7D82-455D-A579-5A55FD61E1BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94B80E06-7D82-455D-A579-5A55FD61E1BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94B80E06-7D82-455D-A579-5A55FD61E1BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E04615D-C57B-4CE2-B76A-3FEC052AF812}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E04615D-C57B-4CE2-B76A-3FEC052AF812}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E04615D-C57B-4CE2-B76A-3FEC052AF812}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E04615D-C57B-4CE2-B76A-3FEC052AF812}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

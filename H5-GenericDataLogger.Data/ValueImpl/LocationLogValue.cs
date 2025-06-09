@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace H5_GenericDataLogger.Data;
 public sealed class LocationLogValue : ILogFieldValue {
 	public record struct LocationData {
+		public static readonly LocationData Default = new LocationData { Latitude = 0.0f, Longitude = 0.0f };
+
 		float Latitude;
 		float Longitude;
 
@@ -30,4 +32,10 @@ public sealed class LocationLogValue : ILogFieldValue {
 	public FieldValueType GetFieldValueType() => FieldValueType.DateTime;
 	public Type GetValueType() => typeof(LocationData);
 	public object GetValue() => LocationData.Unpack(this.Value);
+
+	public LocationLogValue(LocationData? value = null) {
+		// TODO Handle default value
+		LocationData v = value ?? LocationData.Default;
+		this.Value = v.Pack();
+	}
 }

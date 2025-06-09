@@ -10,4 +10,9 @@ public sealed record class TextLogValue : ILogFieldValue {
 	public FieldValueType GetFieldValueType() => FieldValueType.Text;
 	public Type GetValueType() => typeof(string);
 	public object GetValue() => Value;
+
+	public TextLogValue(string? value = null) {
+		// TODO Handle default value
+		this.Value = value ?? string.Empty;
+	}
 }

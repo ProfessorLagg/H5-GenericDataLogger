@@ -10,4 +10,10 @@ public sealed class DateTimeLogValue : ILogFieldValue {
 	public FieldValueType GetFieldValueType() => FieldValueType.DateTime;
 	public Type GetValueType() => typeof(DateTime);
 	public object GetValue() => new DateTime(this.Value);
+
+	public DateTimeLogValue(DateTime? value = null) {
+		// TODO Handle default value
+		DateTime v = value ?? DateTime.MinValue;
+		this.Value = v.Ticks;
+	}
 }

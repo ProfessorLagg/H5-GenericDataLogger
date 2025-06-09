@@ -1,14 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:controls="clr-namespace:H5_GenericDataLogger.Controls"
-			 x:Class="H5_GenericDataLogger.MainPage">
-
+<ContentPage
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:H5_GenericDataLogger.Controls"
+	x:Class="H5_GenericDataLogger.MainPage">
+	<NavigationPage.HasNavigationBar>False</NavigationPage.HasNavigationBar>
 	<ScrollView>
 		<VerticalStackLayout>
-			<controls:CardControl Title="MainPageCard1" AccentColor="{StaticResource Red70}"/>
-			<controls:CardControl Title="MainPageCard2" AccentColor="{StaticResource Orange70}"/>
-			<controls:CardControl Title="MainPageCard2" AccentColor="{StaticResource Blue70}"/>
+			<ImageButton
+				x:Name="NewLogButton"
+				Source="plus.png"
+				HeightRequest="{StaticResource SizeXXL}"
+				WidthRequest="{StaticResource SizeXXL}"
+				BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray20}}" />
+
 		</VerticalStackLayout>
 	</ScrollView>
 
