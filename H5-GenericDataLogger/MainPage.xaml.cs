@@ -10,7 +10,7 @@ public partial class MainPage : ContentPage {
         MainWebView.SetInvokeJavaScriptTarget(this);
     }
 
-    public async Task<String> GetLogsJson() {
+    public string GetLogsJson() {
         Debug.Print($"MainPage.GetLogsJson");
         var logs_json = GlobalEnvironment
             .Connector

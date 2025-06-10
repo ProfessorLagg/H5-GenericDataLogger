@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 using Windows.UI.WebUI;
@@ -36,8 +38,21 @@ namespace H5_GenericDataLogger.Data {
                     _JsonSerializerConfig.WriteIndented = false;
                     //_JsonSerializerConfig.NewLine = "\n";
                     _JsonSerializerConfig.AllowTrailingCommas = false;
+                    _JsonSerializerConfig.Converters.Add(new FullDateTimeConverter());
                 }
                 return _JsonSerializerConfig;
+            }
+        }
+        private sealed class FullDateTimeConverter : JsonConverter<DateTime> {
+            public override DateTime Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) {
+                return DateTime.ParseExact(reader.GetString()!, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+            }
+
+            public override void Write(Utf8JsonWriter writer, DateTime value, JsonSerializerOptions options) {
+                string y = value.Year.ToString("0000");
+                string m = value.Month.ToString("00");
+                string d = value.Day.ToString("00");
+                writer.WriteStringValue(value.ToString(@"yyyy\-MM\-dd\THH\:mm\:ss\.fffzzz"));
             }
         }
         public static string ConvertToJson(this Log log) {
