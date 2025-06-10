@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace H5_GenericDataLogger.Data;
 public sealed record class BlobLogValue : ILogFieldValue {
-	public byte[] Value = Array.Empty<byte>();
-	public FieldValueType GetFieldValueType() => FieldValueType.Real;
-	public Type GetValueType() => typeof(byte[]);
-	public object GetValue() => Value;
+    public byte[] Value;
+    public FieldValueType GetFieldValueType() => FieldValueType.Blob;
+    public Type GetValueType() => typeof(byte[]);
+    public object GetValue() => Value;
+
+    public BlobLogValue(byte[]? value = null) {
+        this.Value = value ?? Array.Empty<byte>();
+    }
 }

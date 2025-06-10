@@ -15,6 +15,6 @@ internal static class DBDebugger {
         connector.EnsureRequiredSchema();
 
         var logs = connector.GetLogs().ToArray();
-        using DataTable log0_entries = connector.GetLogEntries(logs[0]);
+        var log0_entries = connector.GetLogEntries(logs[0]).ToArray();
     }
 }

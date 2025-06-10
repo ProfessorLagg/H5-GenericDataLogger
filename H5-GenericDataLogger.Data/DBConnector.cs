@@ -152,18 +152,10 @@ namespace H5_GenericDataLogger.Data {
                 this.Connection.Close();
             }
         }
-        public DataTable GetLogEntries(Log log) {
+        public DataTable GetRawLogEntries(Log log) {
             Debug.Assert(log.Id > 0);
             ReadOnlySpan<LogField> fields = log.Fields.ToArray();
             Debug.Assert(fields.Length > 0);
-
-            //SELECT
-            //  e.id,
-            //	iv.field_id,
-            //	iv.val
-            //FROM log_entries as e
-            //JOIN integer_log_values as iv ON iv.entry_id == e.id
-            //WHERE e.log_id = 1
             const string entry_name = @"e";
             using (SqliteCommand cmd = new()) {
                 List<string> col_names = new() { $"{entry_name}.id" };
@@ -188,6 +180,21 @@ namespace H5_GenericDataLogger.Data {
                     ' ' + string.Join('\n', joins) +
                     $" WHERE e.log_id = {log.Id}";
                 return this.ExecuteReader(cmd);
+            }
+        }
+        public IEnumerable<IList<ILogFieldValue>> GetLogEntries(Log log) {
+            
+            LogField[] fields = log.Fields.ToArray();
+            using DataTable entries = this.GetRawLogEntries(log);
+            //foreach (DataRow raw_row in entries.Rows) {
+            for(int rawi = 0; rawi < entries.Rows.Count; rawi++) {
+                DataRow raw_row = entries.Rows[rawi];
+                ILogFieldValue[] row = new ILogFieldValue[fields.Length];
+                for (int i = 0; i < fields.Length; i++) {
+                    int ri = i * 2 + 2;
+                    row[i] = LogFieldValueCreator.CreateValue(fields[i].ValueType, raw_row[ri]);
+                }
+                yield return row;
             }
         }
         public void EnsureRequiredSchema() {

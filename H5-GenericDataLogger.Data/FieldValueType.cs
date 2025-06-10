@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace H5_GenericDataLogger.Data {
-    public enum FieldValueType: long {
+    public enum FieldValueType : long {
         Unknown = 0,
         Text = 1,
         Integer = 2,

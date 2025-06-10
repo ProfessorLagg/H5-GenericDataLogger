@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace H5_GenericDataLogger.Data;
 public sealed class FloatLogValue : ILogFieldValue {
-	public double Value = 0;
-	public FieldValueType GetFieldValueType() => FieldValueType.Real;
+	public double Value;
+	public FieldValueType GetFieldValueType() => FieldValueType.Float;
 	public Type GetValueType() => typeof(double);
 	public object GetValue() => Value;
 

@@ -78,7 +78,7 @@
 
 	<ItemGroup>
 	  <Folder Include="Resources\Images\" />
-	  <Folder Include="Resources\Raw\wwwroot\" />
+	  <Folder Include="Resources\Raw\wwwroot\data\" />
 	  <Folder Include="Resources\Splash\" />
 	</ItemGroup>
 
