@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,17 +10,11 @@ using System.Threading.Tasks;
 namespace H5_GenericDataLogger.Debugger;
 internal static class DBDebugger {
 
-	public static void DebugConnector() {
-		DBConnector connector = new DBConnector();
-		connector.EnsureRequiredSchema();
+    public static void DebugConnector() {
+        DBConnector connector = new DBConnector();
+        connector.EnsureRequiredSchema();
 
-		_ = connector.CreateLog("Ciggies", new LogField[]{
-				new LogField() {
-					Label = "Timestamp",
-					ValueType = FieldValueType.DateTime
-				}
-		});
-
-		var logs = connector.GetLogs().ToArray();
-	}
+        var logs = connector.GetLogs().ToArray();
+        using DataTable log0_entries = connector.GetLogEntries(logs[0]);
+    }
 }

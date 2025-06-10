@@ -41,7 +41,7 @@ namespace H5_GenericDataLogger.Data {
 					case FieldValueType.Unknown: throw new InvalidDataException("Unkown value type");
 					case FieldValueType.Text: result[i] = new TextLogValue((string?)values[i]); break;
 					case FieldValueType.Integer: result[i] = new IntegerLogValue((long?)values[i]); break;
-					case FieldValueType.Real: result[i] = new FloatLogValue((double?)values[i]); break;
+					case FieldValueType.Float: result[i] = new FloatLogValue((double?)values[i]); break;
 					case FieldValueType.DateTime: result[i] = new DateTimeLogValue((DateTime?)values[i]); break;
 					case FieldValueType.Location: result[i] = new LocationLogValue((LocationLogValue.LocationData?)values[i]); break;
 					case FieldValueType.Image: throw new NotImplementedException(); // TODO
