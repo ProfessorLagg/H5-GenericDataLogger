@@ -6,6 +6,26 @@
     .icon-pencil {
         background-image: url(/icons/dark/pencil.svg);
     }
+
+    .icon-plus {
+        background-image: url(/icons/dark/plus.svg);
+    }
+
+    .icon-archive-box-arrow-down {
+        background-image: url(/icons/dark/archive-box-arrow-down.svg);
+    }
+
+    .icon-archive-box-x-mark {
+        background-image: url(/icons/dark/archive-box-x-mark.svg);
+    }
+
+    .icon-floppy-disk {
+        background-image: url(/icons/dark/floppy-disk.svg);
+    }
+
+    .icon-document-plus {
+        background-image: url(/icons/dark/document-plus.svg);
+    }
 }
 
 @media (prefers-color-scheme: light) {
@@ -15,6 +35,27 @@
 
     .icon-pencil {
         background-image: url(/icons/light/pencil.svg);
+    }
+
+    .icon-plus {
+        background-image: url(/icons/light/plus.svg);
+    }
+
+    .icon-archive-box-arrow-down {
+        background-image: url(/icons/light/archive-box-arrow-down.svg);
+    }
+
+
+    .icon-archive-box-x-mark {
+        background-image: url(/icons/light/archive-box-x-mark.svg);
+    }
+
+    .icon-floppy-disk {
+        background-image: url(/icons/light/floppy-disk.svg);
+    }
+
+    .icon-document-plus {
+        background-image: url(/icons/light/document-plus.svg);
     }
 }
 

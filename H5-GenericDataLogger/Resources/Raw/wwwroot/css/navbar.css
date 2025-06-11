@@ -1,19 +1,19 @@
 #navbar {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: var(--sizeXL);
+    position: relative;
+    left: calc(var(--sizeM) * -1);
+    top: calc(var(--sizeM) * -1);
+
+    height: fit-content;
     width: 100vw;
-    margin-bottom: var(--sizeM);
 
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
 
-
-    padding-left: var(--sizeM);
+    padding-left: var(--sizeS);
     padding-right: var(--sizeS);
+    padding-bottom: var(--sizeXS);
 
-    border-bottom-width: var(--sizeXXS);
+    border-bottom-width: 1px;
     border-bottom-style: solid;
     border-color: magenta;
 }
@@ -25,7 +25,7 @@
     }
 
     .navbar-btn:hover {
-        filter: brightness(120%);
+        filter: brightness(80%);
     }
 }
 
@@ -36,17 +36,27 @@
     }
 
     .navbar-btn:hover {
-        filter: brightness(80%);
+        filter: invert(33%);
     }
 }
 
-#navbar>.icon {
-    height: 100%;
+#navbar>* {
+    height: var(--sizeXL) !important;
+}
 
+#navbar>button,
+.navbar-btn {
+    border: none;
+    outline: none;
+    border-radius: 0;
 }
 
 .navbar-btn {
     cursor: pointer;
     aspect-ratio: 1/1;
     height: 100%;
+}
+
+#add-btn {
+    margin-left: auto;
 }
