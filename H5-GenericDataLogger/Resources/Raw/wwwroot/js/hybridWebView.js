@@ -1,4 +1,12 @@
 window.HybridWebView = {
+    "IsWebView": function IsWebView() {
+        const isChromeWebView = window.chrome && window.chrome.webview;
+        const isWebkitWebView = window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.webwindowinterop;
+        const isAndroidWebView = typeof hybridWebViewHost !== 'undefined';
+
+        return isChromeWebView || isWebkitWebView || isAndroidWebView;
+    },
+
     "Init": function Init() {
         function DispatchHybridWebViewMessage(message) {
             const event = new CustomEvent("HybridWebViewMessageReceived", { detail: { message: message } });
@@ -140,5 +148,4 @@ window.HybridWebView = {
         window.HybridWebView.__SendMessageInternal('__InvokeJavaScriptFailed', taskId + '|' + json);
     }
 }
-
 window.HybridWebView.Init();

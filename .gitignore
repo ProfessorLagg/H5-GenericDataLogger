@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 Wireframe/temp.html
+/H5-GenericDataLogger/Resources/Raw/wwwroot/dbg

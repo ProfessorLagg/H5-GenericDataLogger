@@ -18,24 +18,13 @@
 }
 
 .home-log-edit-btn {
-    all: unset;
     aspect-ratio: 1/1;
     height: var(--sizeL);
     width:  var(--sizeL);
-    /*Background*/
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url("/icons/pencil.svg");
-    background-size: contain;
 
     border-radius: var(--sizeXXS);
 }
 
 .home-log-edit-btn:hover {
     background-color: var(--color-gray20);
-}
-
-@media (prefers-color-scheme: dark) {
-    .home-log-edit-btn {
-        filter: invert();
-    }
 }

@@ -1,0 +1,28 @@
+@media (prefers-color-scheme: dark) {
+    .icon-arrow-long-left {
+        background-image: url(/icons/dark/arrow-long-left.svg);
+    }
+
+    .icon-pencil {
+        background-image: url(/icons/dark/pencil.svg);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .icon-arrow-long-left {
+        background-image: url(/icons/light/arrow-long-left.svg);
+    }
+
+    .icon-pencil {
+        background-image: url(/icons/light/pencil.svg);
+    }
+}
+
+
+.icon {
+    aspect-ratio: 1/1;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    background-size: contain;
+    background-repeat: no-repeat;
+}

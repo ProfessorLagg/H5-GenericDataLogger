@@ -1,4 +1,7 @@
+@import url(/css/icons.css);
 @import url(/css/borders.css);
+
+@import url(/css/navbar.css);
 
 :root {
     --color-blue10: #ccdeff;
@@ -52,6 +55,7 @@
     margin: 0px;
     box-sizing: border-box !important;
     vertical-align: text-bottom;
+    color: var(--color-text);
 }
 
 body {
@@ -59,8 +63,8 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-    * {
-        color: var(--color-white);
+    :root {
+        --color-text: var(--color-white);
     }
 
     body {
@@ -69,16 +73,14 @@ body {
 }
 
 @media (prefers-color-scheme: light) {
-    * {
-        color: var(--color-black);
+    :root {
+        --color-text: var(--color-black);
     }
 
     body {
-        background-color: var(--color-gray10);
+        background-color: var(--color-white);
     }
 }
-
-
 
 h1 {
     font-size: var(--sizeXXL);
