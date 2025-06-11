@@ -4,8 +4,6 @@
 @import url(/css/navbar.css);
 
 :root {
-    --color-none: rgba(0, 0, 0, 0);
-
     --color-blue10: #ccdeff;
     --color-blue30: #99bdff;
     --color-blue50: #0059ff;
@@ -18,17 +16,11 @@
     --color-orange70: #996600;
     --color-orange90: #332200;
 
-    --color-green10: hsl(120, 60%, 90%);
-    --color-green30: hsl(120, 60%, 70%);
-    --color-green50: hsl(120, 60%, 50%);
-    --color-green70: hsl(120, 60%, 30%);
-    --color-green90: hsl(120, 60%, 10%);
-
-    --color-red10: hsl(0, 100%, 90%);
-    --color-red30: hsl(0, 100%, 70%);
-    --color-red50: hsl(0, 100%, 50%);
-    --color-red70: hsl(0, 100%, 30%);
-    --color-red90: hsl(0, 100%, 10%);
+    --color-red10: #fcd6cf;
+    --color-red30: #f6836f;
+    --color-red50: #f2330d;
+    --color-red70: #901d09;
+    --color-red90: #300a03;
 
     --color-white: #ffffff;
     --color-black: #000000;
@@ -78,10 +70,6 @@ body {
     body {
         background-color: var(--color-gray90);
     }
-
-    button {
-        background-color: var(--color-gray80);
-    }
 }
 
 @media (prefers-color-scheme: light) {
@@ -92,25 +80,6 @@ body {
     body {
         background-color: var(--color-white);
     }
-
-    button {
-        background-color: var(--color-gray10);
-        outline-color: var(--color-gray20);
-    }
-
-    button:hover {
-        outline-color: var(--color-gray70);
-    }
-}
-
-button {
-    border: none;
-    padding: var(--sizeXXS);
-    outline-width: 2px;
-    outline-style: solid;
-    border-radius: var(--sizeXXS);
-    width: fit-content;
-    height: fit-content;
 }
 
 h1 {
@@ -129,12 +98,4 @@ h4,
 h5,
 h6 {
     font-size: var(--sizeM);
-}
-
-input:valid {
-    border-color: var(--color-green30) !important;
-}
-
-input:invalid {
-    border-color: var(--color-red30) !important;
 }

@@ -14,6 +14,17 @@ public partial class MainPage : ContentPage {
 		Debug.WriteLine(msg);
 	}
 
+	//public string GetLogsJson() {
+	//	Debug.Print($"MainPage.GetLogsJson");
+	//	var logs_json = GlobalEnvironment
+	//		.Connector
+	//		.GetLogs()
+	//		.AsParallel()
+	//		.Select(log => log.ToFullJson());
+	//	string result = $"[{string.Join(',', logs_json)}]";
+	//	return result;
+	//}
+
 	/// <summary>
 	/// TODO summary
 	/// </summary>

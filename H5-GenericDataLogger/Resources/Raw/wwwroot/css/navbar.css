@@ -1,19 +1,19 @@
 #navbar {
-    position: relative;
-    left: calc(var(--sizeM) * -1);
-    top: calc(var(--sizeM) * -1);
-
-    height: fit-content;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: var(--sizeXL);
     width: 100vw;
+    margin-bottom: var(--sizeM);
 
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
 
-    padding-left: var(--sizeS);
+
+    padding-left: var(--sizeM);
     padding-right: var(--sizeS);
-    padding-bottom: var(--sizeXS);
 
-    border-bottom-width: 1px;
+    border-bottom-width: var(--sizeXXS);
     border-bottom-style: solid;
     border-color: magenta;
 }
@@ -25,7 +25,7 @@
     }
 
     .navbar-btn:hover {
-        filter: brightness(80%);
+        filter: brightness(120%);
     }
 }
 
@@ -36,27 +36,17 @@
     }
 
     .navbar-btn:hover {
-        filter: invert(33%);
+        filter: brightness(80%);
     }
 }
 
-#navbar>* {
-    height: var(--sizeXL) !important;
-}
+#navbar>.icon {
+    height: 100%;
 
-#navbar>button,
-.navbar-btn {
-    border: none;
-    outline: none;
-    border-radius: 0;
 }
 
 .navbar-btn {
     cursor: pointer;
     aspect-ratio: 1/1;
     height: 100%;
-}
-
-#add-btn {
-    margin-left: auto;
 }
