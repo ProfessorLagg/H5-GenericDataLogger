@@ -3,8 +3,11 @@
     height: var(--sizeXXL);
 
     display: flex;
-    justify-content: space-between;
+
+    justify-content: start;
     align-items: end;
+
+
     padding-bottom: var(--sizeXS);
     margin-top: var(--sizeM);
     border-bottom-width: var(--sizeXXS);
@@ -14,17 +17,27 @@
 .home-log-title {
     font-size: var(--sizeM);
     font-weight: bold;
-
+    margin-right: auto;
+    margin-left: var(--sizeM);
 }
 
-.home-log-edit-btn {
+
+.home-log-edit-btn,
+.home-log-add-btn {
     aspect-ratio: 1/1;
     height: var(--sizeL);
-    width:  var(--sizeL);
+    width: var(--sizeL);
 
     border-radius: var(--sizeXXS);
 }
 
-.home-log-edit-btn:hover {
+.home-log-edit-btn:hover,
+.home-log-add-btn {
     background-color: var(--color-gray20);
+    cursor: pointer;
+}
+
+.home-log-add-btn {
+    border: none;
+    background-color: var(--color-none);
 }
