@@ -35,5 +35,21 @@ namespace H5_GenericDataLogger.Data {
                 case FieldValueType.Blob: return "blob_log_values";
             }
         }
+
+        private static string[]? _OptionsHTML = null;
+        public static string[] OptionsHTML {
+            get {
+                if (_OptionsHTML is null) {
+                    FieldValueType[] fvts = Enum.GetValues<FieldValueType>();
+                    _OptionsHTML = new string[fvts.Length];
+                    for (int i = 0; i < fvts.Length; i++) {
+                        string disabled_str = fvts[i] == FieldValueType.Unknown ? " disabled" : "";
+                        _OptionsHTML[i] = $"<option value=\"{fvts[i].ToInt()}\"{disabled_str}>{fvts[i].ToString()}</option>";
+                    }
+                }
+
+                return _OptionsHTML;
+            }
+        }
     }
 }

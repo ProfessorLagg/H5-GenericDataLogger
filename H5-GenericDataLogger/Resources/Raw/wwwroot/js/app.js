@@ -31,6 +31,16 @@ async function getLogsJson() {
     }
 }
 
+async function getValueTypeOptionsHTML() {
+    if (window.HybridWebView.IsWebView()) {
+        return await window.HybridWebView.InvokeDotNet('GetValueTypeOptionsHTML');
+    } else {
+        const req = fetch("dbg/value_type_options.htm");
+        const rsp = await req;
+        return await rsp.text();
+    }
+}
+
 function isAlphaNumericASCII(str) {
     var code, i, len;
 
@@ -44,3 +54,14 @@ function isAlphaNumericASCII(str) {
     }
     return true;
 };
+
+async function saveLog(id, title, fields) {
+    const fields_json = JSON.stringify(fields);
+    console.log(`app.saveLog(id: ${id}, title: ${title}, fields_json: ${fields_json}"`);
+    if (!window.HybridWebView.IsWebView()) {
+        console.error("Cannot save in browser mode");
+        return;
+    }
+
+    return await window.HybridWebView.InvokeDotNet('SaveLog', [id, title, fields_json]);
+}

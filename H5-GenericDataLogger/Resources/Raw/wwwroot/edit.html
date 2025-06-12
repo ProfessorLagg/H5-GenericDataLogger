@@ -14,16 +14,16 @@
     <body>
         <link rel="stylesheet" href="css/page-edit.css">
         <div id="navbar">
-            <button onclick="navigation.back()" id="back-btn" class="navbar-btn icon icon-arrow-long-left" style="margin-right: auto;" aria-description="go back to previous page"></button>
-            <button onclick="console.log('save')" id="save-btn" class="navbar-btn icon icon-floppy-disk" aria-description="save log"></button>
+            <button onclick="back_btn_click()" id="back-btn" class="navbar-btn icon icon-arrow-long-left" style="margin-right: auto;" aria-description="go back to previous page"></button>
+            <button onclick="save_btn_click()" id="save-btn" class="navbar-btn icon icon-floppy-disk" aria-description="save log"></button>
         </div>
         <div id="edit-title-section" class="edit-section">
             <span id="edit-title-header" class="edit-section-header">Title</span>
-            <input id="edit-title-input" class="edit-text" type="text" minlength="0" maxlength="255" pattern="\w\w*" required>
+            <input id="edit-title-input" class="edit-text" type="text" minlength="1" maxlength="255" pattern="\w\w*" required>
         </div>
         <div id="edit-fields-section" class="edit-section">
             <span id="edit-fields-header" class="edit-section-header">Fields</span>
-            <button id="add-field-button" class="edit-button">Add</button>
+            <button id="add-field-button" class="edit-button" onclick="add_field()">Add</button>
         </div>
         <script src="js/page-edit.js"></script>
     </body>
