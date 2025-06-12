@@ -80,9 +80,9 @@ async function create_entry_fields() {
             const yr = now.getFullYear().toString().padStart(4, 0)
             const mo = (now.getMonth() + 1).toString().padStart(2, 0);
             const da = now.getDate().toString().padStart(2, 0);
-            const ho = now.getHours().toString().padStart(2, 0);
+            const hr = now.getHours().toString().padStart(2, 0);
             const mi = now.getMinutes().toString().padStart(2, 0);
-            e_input.value = `${yr}-${mo}-${da}T${ho}:${mi}`;
+            e_input.value = `${yr}-${mo}-${da}T${hr}:${mi}`;
         }
         e_input.setAttribute("name", inp_name);
         e_input.setAttribute("field", JSON.stringify(f));

@@ -22,7 +22,7 @@ namespace H5_GenericDataLogger.Data {
             return (long)fvt;
         }
 
-        public static string TableName(this FieldValueType fvt) {
+        public static string GetTableName(this FieldValueType fvt) {
             switch (fvt) {
                 default: throw new ArgumentException(nameof(fvt));
                 case FieldValueType.Text: return "text_log_values";

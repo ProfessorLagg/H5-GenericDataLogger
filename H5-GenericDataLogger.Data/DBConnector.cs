@@ -147,7 +147,7 @@ namespace H5_GenericDataLogger.Data {
                 this.Connection.Open();
                 using (SqliteCommand cmd = this.Connection.CreateCommand()) {
                     cmd.CommandText = "INSERT INTO log_entries VALUES\n";
-
+                    throw new NotImplementedException();
                 }
                 this.Connection.Close();
             }
@@ -165,7 +165,7 @@ namespace H5_GenericDataLogger.Data {
                     string field_name = $"v{i}";
                     string field_id_col_name = $"{field_name}.field_id";
                     string field_val_col_name = $"{field_name}.val";
-                    string join_statement = $"JOIN {fields[i].ValueType.TableName()} as {field_name} ON {field_name}.entry_id == e.id";
+                    string join_statement = $"JOIN {fields[i].ValueType.GetTableName()} as {field_name} ON {field_name}.entry_id == e.id";
 
                     col_names.Add(field_id_col_name);
                     col_names.Add(field_val_col_name);

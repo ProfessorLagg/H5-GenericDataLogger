@@ -98,5 +98,9 @@ async function saveEntry(log_id, values) {
         console.error("Cannot save in browser mode");
         return;
     }
-    return await window.HybridWebView.InvokeDotNet('SaveEntry', [log_id, values_json]);
+    let save_sucess =  await window.HybridWebView.InvokeDotNet('TrySaveEntry', [log_id, values_json]);
+    if(!save_sucess){
+        console.error("Saving entry failed");
+        alert("Saving entry failed");
+    }
 }
