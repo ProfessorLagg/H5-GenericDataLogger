@@ -49,6 +49,10 @@ public partial class MainPage : ContentPage {
         Log log = GlobalEnvironment.Connector.CreateLog(title, fields);
     }
 
+    public void SaveEntry(long log_id, string values_json_str) {
+        throw new NotImplementedException();
+    }
+
     protected override bool OnBackButtonPressed() {
         _ = MainWebView.EvaluateJavaScriptAsync("history.back()");
         return true;

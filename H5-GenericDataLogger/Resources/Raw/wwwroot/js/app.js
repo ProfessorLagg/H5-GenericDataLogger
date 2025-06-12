@@ -65,3 +65,38 @@ async function saveLog(id, title, fields) {
 
     return await window.HybridWebView.InvokeDotNet('SaveLog', [id, title, fields_json]);
 }
+
+const ValueTypeToInputType = {
+    0: "", // Unknown
+    1: "text", // Text
+    2: "number", // Integer
+    3: "number", // Float
+    4: "datetime-local", // DateTime
+    5: "", // TODO Location
+    6: "image", // Image
+    7: "checkbox", // Bool
+    8: "file", // Blob
+}
+
+function parseFieldInputValue(typeint, value) {
+    switch (typeint) {
+        case 1: return `${value}`; // text | Text
+        case 2: return parseInt(value); // number | Integer
+        case 3: return parseFloat(value); // number | Float
+        case 4: return new Date(Date.parse(value)); // datetime-local | DateTime
+        case 5: throw Error("not implemented"); // ? | Location
+        case 6: return value; // TODO image | Image
+        case 7: return value === 'on'; // checkbox | Bool
+        default: throw Error("invalid typeint: " + typeint);
+    }
+}
+
+async function saveEntry(log_id, values) {
+    const values_json = JSON.stringify(values);
+    console.log(`app.saveLog(log_id: ${log_id}, values_json: ${values_json}"`);
+    if (!window.HybridWebView.IsWebView()) {
+        console.error("Cannot save in browser mode");
+        return;
+    }
+    return await window.HybridWebView.InvokeDotNet('SaveEntry', [log_id, values_json]);
+}

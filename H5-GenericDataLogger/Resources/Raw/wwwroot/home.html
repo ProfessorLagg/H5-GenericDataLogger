@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="css/root.css">
         <script src="js/hybridWebView.js"></script>
         <script src="js/app.js"></script>
-        <title>Lagger</title>
+        <title>Lagger - Home</title>
     </head>
 
     <body>
@@ -17,8 +17,14 @@
         </div>
         <link rel="stylesheet" href="css/page-home.css">
         <script src="js/page-home.js"></script>
-
-       
+        <dialog id="new-entry-dialog">
+            <span id="new-entry-title">None</span>
+            <form id="new-entry-form" method="dialog">
+                <input name="logid" id="new-entry-logid-input" type="number" hidden>  
+                <button id="new-entry-false-btn" value="false" formmethod="dialog">Cancel</button>
+                <button id="new-entry-true-btn" value="true">Confirm</button>
+            </form>
+        </dialog>
     </body>
 
 </html>

@@ -41,3 +41,39 @@
     border: none;
     background-color: var(--color-none);
 }
+
+#new-entry-dialog {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: var(--sizeXXL);
+    margin-inline: auto;
+    width: fit-content;
+    height: fit-content;
+}
+
+#new-entry-form {
+    height: 100%;
+
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: max-content max-content;
+    gap: var(--sizeM) var(--sizeM);
+
+    padding: var(--sizeS);
+    align-items: end;
+}
+
+#new-entry-title {
+    font-size: var(--sizeM);
+    font-weight: 500;
+}
+
+#new-entry-true-btn {
+    margin-left: auto;
+
+}
+
+#new-entry-false-btn {
+    /* grid-column: 2; */
+}

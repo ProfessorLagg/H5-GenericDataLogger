@@ -106,7 +106,7 @@ async function back_btn_click() {
         return;
     }
 
-    navigator.back();
+    navigator.navigate("/home.html");
 }
 
 async function add_field() {

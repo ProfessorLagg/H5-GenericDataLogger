@@ -78,8 +78,13 @@ namespace H5_GenericDataLogger.Data {
 				LogField field = this._Fields[i];
 				sb.Append('{');
 
-				// label
-				sb.Append("\"label\":\"");
+                // id
+                sb.Append("\"id\":\"");
+                sb.Append(field.Id);
+                sb.Append("\",");
+
+                // label
+                sb.Append("\"label\":\"");
 				sb.Append(field.Label);
 				sb.Append("\",");
 
